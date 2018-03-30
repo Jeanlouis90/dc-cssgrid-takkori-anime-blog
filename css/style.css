@@ -1,0 +1,251 @@
+    /* Core Styles */
+    
+    body,
+    html {
+        margin: 0;
+        font-family: 'Source Sans Pro', sans-serif;
+        color: #fff;
+        font-size: 1.1em;
+        line-height: 1.5;
+        text-align: left;
+        height: 100vh;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    /* Container */
+    
+    main img {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    /* Nav */
+    
+    nav {
+        width: 100%;
+    }
+    /* Header Showcase */
+    
+    header {
+        grid-area: header;
+    }
+    
+    #showcase {
+        font-family: 'Source Sans Pro', sans-serif;
+        display: block;
+        margin-top: -25px;
+        min-height: 450px;
+        color: #fff;
+        background: #222;
+        z-index: 1;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #showcase .bg-image {
+        position: absolute;
+        background: #222 url('/project8c_blog_CSSGrid_Mobile First/img/Crest of the Stars/crestofthe.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        width: 100%;
+        height: 450px;
+        z-index: 0;
+        opacity: 0.1;
+    }
+    
+    #showcase h1 {
+        padding-top: 100px;
+        padding-bottom: 0;
+        font-size: 63px;
+        font-weight: 600;
+        color: inherit;
+        font-family: 'Source Sans Pro', sans-serif;
+        text-align: center;
+    }
+    
+    #showcase p {
+        margin-bottom: 15px;
+        font-size: 21px;
+        font-weight: 200;
+    }
+    
+    #showcase .content-wrap,
+    #section-a .content-wrap {
+        padding: 0 1.5em;
+    }
+    
+    #showcase .btn {
+        background: rgba(255, 255, 255, 0.667);
+        color: #333;
+    }
+    
+    #showcase .btn:hover {
+        background: rgb(0, 0, 0);
+        color: #fff;
+    }
+    /* Section A */
+    
+    main {
+        grid-area: content;
+    }
+    
+    #section-a {
+        display: grid;
+        background: #eaeaea;
+        color: #333;
+        padding-bottom: 2em;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    #section-a .content-wrap {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: nav content side;
+    }
+    /* Side */
+    
+    aside {
+        grid-area: side;
+        margin-right: .5rem;
+        background: rgba(163, 39, 34, 0.74);
+        color: #eaeaea;
+        height: 100%;
+        margin-bottom: 0;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        width: 100%;
+    }
+    
+    aside h3 {
+        background: black;
+        margin-bottom: 5%;
+        font-weight: 600;
+    }
+    
+    aside img {
+        width: 100%;
+        margin-bottom: 1px;
+    }
+    
+    aside .card-content {
+        margin-bottom: 20%;
+    }
+    /* Footer */
+    
+    footer {
+        position: absolute;
+        grid-area: footer;
+        top: 1850px;
+        height: 75px;
+        width: 100%;
+        z-index: 0;
+        bottom: 0;
+    }
+    /* Media Queries */
+    
+    @media(min-width: 700px) {
+        .holycontainer {
+            display: grid;
+            grid-template-areas: "header header" "content side" "footer footer";
+            grid-template-columns: 7fr 2fr;
+            grid-template-rows: 1fr auto;
+            grid-gap: 1px;
+            height: 100%;
+        }
+        header {
+            grid-area: header;
+        }
+        nav {
+            grid-area: nav;
+            width: 100%;
+        }
+        main {
+            grid-area: content;
+        }
+        aside {
+            grid-area: side;
+            margin-right: .5rem;
+        }
+        footer {
+            grid-area: footer;
+            background: linear-gradient(#333, #111);
+            bottom: 0;
+        }
+    }
+    
+    @media(max-width: 700px) {
+        .grid {
+            display: grid;
+            grid-template-columns: 4fr;
+            text-align: center;
+        }
+        /* Showcase Mobile */
+        #showcase {
+            font-family: 'Source Sans Pro', sans-serif;
+            display: block;
+            margin-top: -5px;
+            max-height: 450px;
+            color: #fff;
+            background: #222;
+            z-index: -2;
+            width: 100%;
+        }
+        #showcase .bg-image {
+            position: absolute;
+            background: #222 url('/project8c_blog_CSSGrid_Mobile First/img/Crest of the Stars/crestofthe.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            width: 100%;
+            max-height: 450px;
+            z-index: 0;
+            opacity: 0.1;
+            padding: 0;
+        }
+        #showcase h1 {
+            font-size: 63px;
+            font-weight: 600;
+            color: inherit;
+            font-family: 'Source Sans Pro', sans-serif;
+            text-align: center;
+        }
+        #showcase p {
+            margin-bottom: 15px;
+            font-size: 21px;
+            font-weight: 200;
+        }
+        #showcase .content-wrap,
+        #section-a .content-wrap {
+            padding: 0 1.5em;
+        }
+        #showcase .btn {
+            background: rgba(255, 255, 255, 0.667);
+            color: #333;
+        }
+        #showcase .btn:hover {
+            background: rgb(0, 0, 0);
+            color: #fff;
+        }
+        /* Section A Mobile */
+        #section-a {
+            padding: 5%;
+        }
+        #section-a .content-text {
+            grid-column: 1/3;
+        }
+        /* Sidebar Mobile */
+        #sidebar {
+            display: none;
+        }
+        /* Footer */
+        footer {
+            top: 2700px;
+            padding: 1%;
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(#333, #111);
+        }
+    }
